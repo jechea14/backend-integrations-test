@@ -20,7 +20,7 @@ def process_csv_files():
     # Combine category, sub-category, and sub-sub-category into one category 
     # separated by a pipe symbol in lower case
     products_df['Category'] = products_df['CATEGORY'] + ' | ' + products_df['SUB_CATEGORY'] + ' | ' + products_df['SUB_SUB_CATEGORY']
-    products_df['Category'] = products_df['Category'].str.lower()
+    products_df['Category'] = products_df['Category'].str.title()
 
 
 if __name__ == "__main__":
