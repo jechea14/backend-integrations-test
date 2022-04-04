@@ -1,7 +1,6 @@
 import os
 
 RICHARD_ID = os.environ.get("RICHARD_ID")
-# RICHARD_ID = "ae9c81fe-163e-4546-8349-19dbf63715c7"
 BEAUTY_ID = os.environ.get("BEAUTY_ID")
 
 merchants_data = {
