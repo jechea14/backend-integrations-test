@@ -1,11 +1,13 @@
 import numpy as np
 import pandas as pd
 
+PRICES_STOCK_CSV = "PRICES-STOCK.csv"
+PRODUCTS_CSV = "PRODUCTS.csv"
 
 def process_csv_files():
     # Read csv files into separate dataframes
-    prices_stock_df = pd.read_csv("PRICES-STOCK.csv", sep='|'  , engine='python')
-    products_df = pd.read_csv("PRODUCTS.csv", sep='|'  , engine='python')
+    prices_stock_df = pd.read_csv(PRICES_STOCK_CSV, sep='|'  , engine='python')
+    products_df = pd.read_csv(PRODUCTS_CSV, sep='|'  , engine='python')
     
     # Select only MM and RHSM branches that have stock
     filt = ((prices_stock_df['BRANCH'] == 'MM') | (prices_stock_df['BRANCH'] == 'RHSM')) & (prices_stock_df['STOCK'] > 0)
@@ -18,7 +20,7 @@ def process_csv_files():
     # Combine category, sub-category, and sub-sub-category into one category 
     # separated by a pipe symbol in lower case
     products_df['Category'] = products_df['CATEGORY'] + ' | ' + products_df['SUB_CATEGORY'] + ' | ' + products_df['SUB_SUB_CATEGORY']
-    products_df['Category'] = products_df['Category'].str.lower()
+    products_df['Category'] = products_df['Category'].str.title()
 
 
 if __name__ == "__main__":
