@@ -9,6 +9,18 @@ class AppTestCase(unittest.TestCase):
         tester = app.test_client(self)
         response = tester.get('/ping')
         assert 'PONG' in response.data
+        
+    def test_get_token(self):
+        pass
+    
+    def test_product(self):
+        pass
+    
+    def test_merchants(self):
+        pass
+    
+    def test_update_merchant(self):
+        pass
 
 
 if __name__ == '__main__':

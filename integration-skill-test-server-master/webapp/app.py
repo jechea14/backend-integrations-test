@@ -10,10 +10,6 @@ from flask_limiter.util import get_remote_address
 from jsonschema import exceptions as jsonschema_exceptions
 from jsonschema import validate as jsonschema_validate
 
-os.environ['TOKEN_VALUES'] = "3hDhcYcjAJyJAZYTYmkY"
-os.environ['CLIENT_ID'] = "mRkZGFjM"
-os.environ['CLIENT_SECRET'] = "ZGVmMjMz"
-
 app = Flask(__name__)
 GRAND_TYPE = ["client_credentials", "refresh_token"]
 CLIENT_ID = os.environ.get("CLIENT_ID")
